@@ -1,22 +1,14 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import HomeNavigation from "./src/navigations/HomeNavigation";
-import MainNavigation from "./src/navigations/MainNavigation";
 
 export default function App() {
+  const queryClient = new QueryClient();
   return (
-    <NavigationContainer>
-      <MainNavigation />
-    </NavigationContainer>
+    <QueryClientProvider client={queryClient}>
+      <NavigationContainer>
+        <HomeNavigation />
+      </NavigationContainer>
+    </QueryClientProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
