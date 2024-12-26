@@ -1,4 +1,4 @@
-import { Button, StyleSheet, Text, View } from "react-native";
+import { ScrollView } from "react-native";
 import React from "react";
 import Item from "../components/Item";
 
@@ -28,7 +28,7 @@ const Home = () => {
 
   const itemList = data.map((item) => <Item key={item.id} item={item} />);
 
-  return <View>{itemList}</View>;
+  return <ScrollView>{itemList}</ScrollView>;
 };
 
 export default Home;

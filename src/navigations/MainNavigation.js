@@ -1,30 +1,61 @@
-// import React from "react";
-// import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-// import { MaterialCommunityIcons } from "@expo/vector-icons";
-// import ItemDetail from "../screens/ItemDetail";
-// import Home from "../screens/Home";
-// const Tab = createBottomTabNavigator();
+import React from "react";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import Home from "../screens/Home";
+import CreateItem from "../screens/CreateItem";
+import Profile from "../screens/Profile";
+import HomeNavigation from "./HomeNavigation";
+const Tab = createBottomTabNavigator();
 
-// const MainNavigation = () => {
-//   return (
-//     <Tab.Navigator
-//       screenOptions={{
-//         tabBarInactiveTintColor: "grey",
-//         tabBarActiveTintColor: "blue",
-//       }}
-//     >
-//       <Tab.Screen
-//         name="Home"
-//         component={Home}
-//         options={{
-//           tabBarIcon: ({ color, size }) => (
-//             <MaterialCommunityIcons name="home" color={color} size={size} />
-//           ),
-//         }}
-//       />
-//       <Tab.Screen name="Item Detail" component={ItemDetail} />
-//     </Tab.Navigator>
-//   );
-// };
+const MainNavigation = () => {
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        tabBarInactiveTintColor: "grey",
+        tabBarActiveTintColor: "blue",
+      }}
+    >
+      <Tab.Screen
+        name="Home"
+        component={HomeNavigation}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons
+              name="home-outline"
+              color={color}
+              size={size}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Create Item"
+        component={CreateItem}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons
+              name="plus-circle-outline"
+              color={color}
+              size={size}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons
+              name="account-outline"
+              color={color}
+              size={size}
+            />
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  );
+};
 
-// export default MainNavigation;
+export default MainNavigation;
